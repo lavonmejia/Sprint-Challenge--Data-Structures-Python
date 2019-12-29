@@ -43,5 +43,22 @@ class LinkedList:
     return False
 
   def reverse_list(self):
-    # TO BE COMPLETED
-    pass
+    # if no head, return true
+    if self.head is None:
+      return True
+      # if there is a head and it has no value, return None
+    elif self.head.next_node is None:
+      return True
+    # 
+    else:
+      # create a new list and add the items in the current list to the new list which produces the reversed order, runtime of On
+      ll = LinkedList()
+      node = self.head
+      while True:
+        ll.add_to_head(node.value)
+        if node.next_node is not None:
+          node = node.next_node
+        else:
+          self.head = ll.head
+          break
+      
